@@ -23,6 +23,23 @@ describe('GameDie.vue', () => {
 
 
 
+  it('defaults to a six-sided die', () => {
+    // Arrange
+    // Create die.
+    const wrapper = shallow(GameDie);
+
+    // Act
+    // Get sides.
+    const totalSides = wrapper.findAll('.game-die-side');
+
+    // Assert
+    // Ensure expected number of sides rendered.
+    assert.equal(totalSides.length, 6);
+  });
+
+
+
+
   it('displays one side at a time', () => {
     // Arrange
     // Prep sides and create die.
