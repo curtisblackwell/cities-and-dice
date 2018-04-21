@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <game-die :sides="[1, 2, 3, 4, 5, 6]"></game-die>
   </div>
 </template>
 
+
+
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GameDie from './components/GameDie.vue';
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  name:       'app',
+  components: { GameDie },
+};
 </script>
 
 
