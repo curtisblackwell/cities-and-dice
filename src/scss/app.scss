@@ -1,0 +1,27 @@
+@import './variables';
+
+body {
+  background-color: $grey-darkest;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.game-die {
+  background: linear-gradient(135deg, $grey-lightest, $grey);
+  border-radius: 4px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 33vw;
+
+  &::before {
+    display: block;
+    content: '';
+    padding-top: 100%;
+  }
+
+  + .game-die {
+    margin-top: 2rem;
+  }
+}

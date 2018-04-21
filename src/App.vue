@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <game-die :sides="[1, 2, 3, 4, 5, 6]"></game-die>
+    <game-die></game-die>
+    <game-die></game-die>
   </div>
 </template>
 
@@ -18,9 +19,5 @@ export default {
 
 
 
-<style lang="scss">
-body {
-  background-color: #3d4852;
-  color: #dae1e7;
-}
-</style>
+
+<style lang="scss" src="./scss/app.scss"></style>
