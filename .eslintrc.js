@@ -17,6 +17,10 @@ module.exports = {
       align: 'value',
     }],
 
+    'no-mixed-operators': ['error', {
+      allowSamePrecedence: true,
+    }],
+
     'no-multi-spaces': ['error', {
       exceptions: {
         ImportDeclaration:  true,
