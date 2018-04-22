@@ -2,6 +2,7 @@
   <div id="app">
     <game-die></game-die>
     <game-die class="red"></game-die>
+    <game-die :sides="eventDie"></game-die>
   </div>
 </template>
 
@@ -11,9 +12,28 @@
 <script>
 import GameDie from './components/GameDie.vue';
 
+/* eslint-disable import/no-webpack-loader-syntax */
+const developmentArea = require('!!html-loader!@/assets/svg/development-area.svg');
+const barbarianShip   = require('!!html-loader!@/assets/svg/barbarian-ship.svg');
+/* eslint-enable import/no-webpack-loader-syntax */
+
 export default {
-  name:       'app',
+  name: 'app',
+
   components: { GameDie },
+
+  data() {
+    return {
+      eventDie: [
+        barbarianShip,
+        barbarianShip,
+        barbarianShip,
+        `<span class="text-blue-dark">${developmentArea}</span>`,
+        `<span class="text-green-dark">${developmentArea}</span>`,
+        `<span class="text-red-dark">${developmentArea}</span>`,
+      ],
+    };
+  },
 };
 </script>
 
