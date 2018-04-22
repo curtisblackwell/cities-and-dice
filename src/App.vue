@@ -7,7 +7,7 @@
     </div>
 
     <div class="flex w-screen">
-      <button class="btn-green p-8 w-1/2">🎲</button>
+      <button @click="roll" class="btn-green p-8 w-1/2">🎲</button>
       <button class="btn-red p-8 w-1/2">️➡</button>
     </div>
   </div>
@@ -40,6 +40,17 @@ export default {
         `<span class="text-red-dark">${developmentArea}</span>`,
       ],
     };
+  },
+
+  methods: {
+    /**
+     * Roll all the dice.
+     *
+     * @return void
+     */
+    roll() {
+      this.$children.forEach(die => die.roll());
+    },
   },
 };
 </script>
