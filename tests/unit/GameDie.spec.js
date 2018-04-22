@@ -1,6 +1,7 @@
-import { assert }  from 'chai';
-import { shallow } from '@vue/test-utils';
-import GameDie     from '@/components/GameDie.vue';
+import { shallow }     from '@vue/test-utils';
+import { assert }      from 'chai';
+import { range, uniq } from 'lodash';
+import GameDie         from '@/components/GameDie.vue';
 
 describe('GameDie.vue', () => {
   it('allows you to specify sides', () => {
@@ -57,5 +58,26 @@ describe('GameDie.vue', () => {
     // Assert
     // Ensure only one side visible.
     assert.equal(visibleSides.length, 1);
+  });
+
+
+
+
+  it('displays a random side when rolled', () => {
+    // Arrange
+    // Create die.
+    const die          = shallow(GameDie).vm;
+    const rolledValues = [];
+
+    // Act
+    // Roll several times.
+    range(6).forEach(() => {
+      die.roll();
+      rolledValues.push(die.rolledIndex);
+    });
+
+    // Assert
+    // Assert more than one value rolled.
+    assert.isAtLeast(uniq(rolledValues).length, 2);
   });
 });
