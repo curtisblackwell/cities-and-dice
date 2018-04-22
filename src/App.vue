@@ -7,8 +7,8 @@
     </div>
 
     <div class="flex w-screen">
-      <button @click="roll" class="btn-green p-8 w-1/2">🎲</button>
-      <button class="btn-red p-8 w-1/2">️➡</button>
+      <button class="btn-roll p-8 w-1/2" @click="roll">🎲</button>
+      <button class="btn-pass p-8 w-1/2" @click="pass" disabled>️➡</button>
     </div>
   </div>
 </template>
@@ -31,6 +31,8 @@ export default {
 
   data() {
     return {
+      buttons: [],
+
       eventDie: [
         barbarianShip,
         barbarianShip,
@@ -44,13 +46,39 @@ export default {
 
   methods: {
     /**
+     * Pass the dice so another player can roll.
+     *
+     * @return void
+     */
+    pass() {
+      this.toggleButtons();
+    },
+
+    /**
      * Roll all the dice.
      *
      * @return void
      */
     roll() {
+      this.toggleButtons();
       this.$children.forEach(die => die.roll());
     },
+
+    /**
+     * Toggle enabled/disabled state for buttons.
+     *
+     * @return void
+     */
+    toggleButtons() {
+      this.buttons.forEach(button => button.disabled = !button.disabled);
+    },
+  },
+
+  /**
+   * When mounted, add buttons to data to simplify toggling.
+   */
+  mounted() {
+    this.buttons = this.$el.querySelectorAll('button');
   },
 };
 </script>

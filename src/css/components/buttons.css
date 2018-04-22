@@ -1,4 +1,4 @@
-.btn-green {
+.btn-roll {
   @apply
     .text-grey-darkest
   ;
@@ -11,7 +11,7 @@
   text-shadow: 1px 1px 3px config('colors.grey-darkest');
 }
 
-.btn-red {
+.btn-pass {
   @apply
     .text-grey-light
   ;
@@ -22,4 +22,11 @@
     config('colors.grey-darkest')
   );
   text-shadow: 1px 1px 3px config('colors.grey-darkest');
+}
+
+button[disabled] {
+  @apply
+    .opacity-25
+    .cursor-not-allowed
+  ;
 }
