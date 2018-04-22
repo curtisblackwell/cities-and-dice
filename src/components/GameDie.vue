@@ -14,6 +14,15 @@
 
 
 <script>
+/* eslint-disable import/no-webpack-loader-syntax */
+const D6_1 = require('!!html-loader!@/assets/svg/D6-1.svg');
+const D6_2 = require('!!html-loader!@/assets/svg/D6-2.svg');
+const D6_3 = require('!!html-loader!@/assets/svg/D6-3.svg');
+const D6_4 = require('!!html-loader!@/assets/svg/D6-4.svg');
+const D6_5 = require('!!html-loader!@/assets/svg/D6-5.svg');
+const D6_6 = require('!!html-loader!@/assets/svg/D6-6.svg');
+/* eslint-enable import/no-webpack-loader-syntax */
+
 export default {
   name: 'GameDie',
 
@@ -21,7 +30,7 @@ export default {
   props: {
     sides: {
       type:    Array,
-      default: () => [1, 2, 3, 4, 5, 6],
+      default: () => [D6_1, D6_2, D6_3, D6_4, D6_5, D6_6],
     },
   },
 

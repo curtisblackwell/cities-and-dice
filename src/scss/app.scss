@@ -8,8 +8,11 @@ body {
 }
 
 .game-die {
-  background: linear-gradient(135deg, $grey-lightest, $grey);
+  $gradient-angle: 135deg;
+
+  background-image: linear-gradient($gradient-angle, $grey-lightest, $grey);
   border-radius: 4px;
+  color: $black;
   display: block;
   overflow: hidden;
   position: relative;
@@ -21,7 +24,26 @@ body {
     padding-top: 100%;
   }
 
+  &.red {
+    background-image: linear-gradient($gradient-angle, $red-light, $red-dark);
+    color: $red-darkest;
+  }
+
   + .game-die {
     margin-top: 2rem;
+  }
+}
+
+.game-die-side {
+  position: absolute;
+  top: 0;
+
+  &, svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  svg {
+    fill: currentColor;
   }
 }

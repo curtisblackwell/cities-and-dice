@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <game-die></game-die>
-    <game-die></game-die>
+    <game-die class="red"></game-die>
   </div>
 </template>
 
