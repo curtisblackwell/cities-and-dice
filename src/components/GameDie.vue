@@ -28,6 +28,9 @@ export default {
 
 
   props: {
+    /**
+     * @property {array} sides Sides of the die. Defaults to six-sided die.
+     */
     sides: {
       type:    Array,
       default: () => [D6_1, D6_2, D6_3, D6_4, D6_5, D6_6],
@@ -37,6 +40,9 @@ export default {
 
   data() {
     return {
+      /**
+       * @property {(null|number)} rolledIndex Index of the last side rolled.
+       */
       rolledIndex: null,
     };
   },
@@ -66,6 +72,9 @@ export default {
   },
 
 
+  /**
+   * When created, roll the die.
+   */
   created() {
     this.roll();
   },
