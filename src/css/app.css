@@ -1,0 +1,10 @@
+@import 'tailwindcss/preflight';
+
+@import 'tailwindcss/components';
+
+@import './base/base';
+@import './components/buttons';
+@import './components/game-die';
+@import './components/svg';
+
+@import 'tailwindcss/utilities';

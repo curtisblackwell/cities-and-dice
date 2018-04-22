@@ -1,0 +1,56 @@
+.game-die {
+  @apply
+    .relative
+    .rounded
+    .shadow-md
+    .w-full
+  ;
+
+  background-image: linear-gradient(
+    config('gradients.direction'),
+    config('colors.grey-lightest'),
+    config('colors.grey')
+  );
+}
+
+.game-die::before {
+  @apply
+    .block
+  ;
+
+  content: '';
+  padding-top: 100%;
+}
+
+.game-die + .game-die {
+  @apply
+    .mt-8
+  ;
+}
+
+.game-die-red {
+  @apply
+    .text-red-darkest
+  ;
+
+  background-image: linear-gradient(
+    config('gradients.direction'),
+    config('colors.red-light'),
+    config('colors.red-dark')
+  );
+}
+
+.game-die-side {
+  @apply
+    .absolute
+    .pin-t
+  ;
+}
+
+.game-die-side,
+.game-die-side svg {
+  @apply
+    .h-full
+    .w-full
+  ;
+}

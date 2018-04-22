@@ -1,0 +1,25 @@
+.btn-green {
+  @apply
+    .text-grey-darkest
+  ;
+
+  background-image: linear-gradient(
+    config('gradients.direction'),
+    config('colors.grey-light'),
+    config('colors.grey-dark')
+  );
+  text-shadow: 1px 1px 3px config('colors.grey-darkest');
+}
+
+.btn-red {
+  @apply
+    .text-grey-light
+  ;
+
+  background-image: linear-gradient(
+    config('gradients.direction'),
+    config('colors.grey-darker'),
+    config('colors.grey-darkest')
+  );
+  text-shadow: 1px 1px 3px config('colors.grey-darkest');
+}
