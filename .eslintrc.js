@@ -34,5 +34,9 @@ module.exports = {
       max:    4,
       maxBOF: 0,
     }],
+
+    'no-param-reassign': 'warn',
+
+    'no-return-assign': 'warn',
   },
 };

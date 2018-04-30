@@ -70,7 +70,9 @@ export default {
      * @return void
      */
     toggleButtons() {
+      /* eslint-disable no-param-reassign, no-return-assign */
       this.buttons.forEach(button => button.disabled = !button.disabled);
+      /* eslint-enable no-param-reassign, no-return-assign */
     },
   },
 
